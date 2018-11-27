@@ -165,7 +165,7 @@ pre_install(){
     echo "Please enter password for shadowsocks-python"
     # read -p "(Default password: teddysun.com):" shadowsockspwd
     shadowsockspwd="yourvps2018"
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
+    #[ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
     echo
     echo "---------------------------"
     echo "password = ${shadowsockspwd}"
@@ -178,7 +178,7 @@ pre_install(){
     echo "Please enter a port for shadowsocks-python [1-65535]"
     # read -p "(Default port: ${dport}):" shadowsocksport
     shadowsocksport=8989
-    [ -z "$shadowsocksport" ] && shadowsocksport=${dport}
+    #[ -z "$shadowsocksport" ] && shadowsocksport=${dport}
     expr ${shadowsocksport} + 1 &>/dev/null
     if [ $? -eq 0 ]; then
         if [ ${shadowsocksport} -ge 1 ] && [ ${shadowsocksport} -le 65535 ] && [ ${shadowsocksport:0:1} != 0 ]; then
@@ -203,7 +203,7 @@ pre_install(){
     done
     # read -p "Which cipher you'd select(Default: ${ciphers[0]}):" pick
     pick=7
-    [ -z "$pick" ] && pick=1
+    #[ -z "$pick" ] && pick=1
     expr ${pick} + 1 &>/dev/null
     if [ $? -ne 0 ]; then
         echo -e "[${red}Error${plain}] Please enter a number"
